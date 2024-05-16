@@ -28,7 +28,7 @@ Steps to make block_allICMP running
 6. start another terminal or a new terminal on host and ping you Freebsd VM IP. It should not print anything.
 To test it you can remove the condition if (iph->ip_p !=1) which is that if the protocol os anything other than ICMP, it is going to send it to the socket. Else it will block it.
 
-
+Note: In the code, if you remove the print statement and just execute the if condition with I protocol != 1, you will see that there is no output on pinging after executing ./block_allICMP 50
 Steps to make block_inICMP running
 
 1. Replace file block_inICMP.c with the file shared for block all incoming ICMP packets.
