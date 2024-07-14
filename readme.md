@@ -1,17 +1,18 @@
 
+IPFW is an IPv4 and IPv6-compatible stateful firewall designed for FreeBSD. It consists of the kernel firewall filter rule processor with its integrated packet accounting facility, the logging facility, NAT, the dummynet traffic shaper, a forward facility, a bridge facility, and an ipstealth facility.FreeBSD includes an example ruleset in /etc/rc.firewall that specifies many firewall types for typical circumstances to aid inexperienced users in developing suitable rules. IPFW offers a robust syntax that enables expert users to create customized rulesets that satisfy the security needs of a specific environment.
 
-Steps to make divert-loop working
+Steps to make divert-loop working,
 =
-
+run the following commands to make the 
 1. Sudo ipfw add 65000 allow ip from any to any
 
-2. Sudo ipfw add 300 divert 5000 all from any to [my IP:192.168.159.130] 2000
+2. Sudo ipfw add 300 divert 5000 all from any to [my IP] 2000
 
 3. Sudo ipfw add 400 divert 5000 tcp from [my IP] to any
 
-4. sudo	ipfw add 30 divert 5000 ip from any to 192.168.159.130
+4. sudo	ipfw add 30 divert 5000 ip from any to [my IP]
 
-5. Sudo ipfw add 40 divert 5000 ip from 192.168.159.130 to any
+5. Sudo ipfw add 40 divert 5000 ip from [my IP] to any
 
 6. Sudo ipfw add 65000 allow ip from any to any
 
